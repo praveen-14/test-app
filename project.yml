@@ -1,5 +1,5 @@
 packages:
   - name: maker
     actions:
-      - name: maker
+      - name: test
         runtime: 'python:default'
