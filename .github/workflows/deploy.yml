@@ -9,10 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+      - uses: actions/checkout@v2
+      
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
         
       - name: Deploy
-        run: doctl serverless deploy maker --remote-build
+        run: |
+        doctl serverless install
+        doctl serverless deploy maker --remote-build
