@@ -21,5 +21,7 @@ jobs:
         run: |
           # sudo snap install doctl
           # doctl auth init --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-          # doctl serverless connect maker
+          
+          doctl serverless install
+          doctl serverless connect maker
           doctl serverless deploy . --remote-build
