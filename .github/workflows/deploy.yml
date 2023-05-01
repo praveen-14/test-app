@@ -20,4 +20,5 @@ jobs:
       - name: Deploy
         run: |
           doctl serverless install
+          doctl serverless connect maker
           doctl serverless deploy maker --remote-build
