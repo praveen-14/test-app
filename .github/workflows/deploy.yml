@@ -12,14 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      # - name: Install doctl
-      #   uses: digitalocean/action-doctl@v2
-      #   with:
-      #     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
         
       - name: Deploy
         run: |
-          sudo snap install doctl
-          doctl auth init --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-          doctl serverless connect maker
-          doctl serverless deploy maker --remote-build
+          # sudo snap install doctl
+          # doctl auth init --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          # doctl serverless connect maker
+          doctl serverless deploy . --remote-build
