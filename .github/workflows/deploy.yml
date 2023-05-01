@@ -21,6 +21,7 @@ jobs:
         run: |
           pwd
           ls
+          doctl version
           doctl serverless install
           doctl serverless --version
           doctl serverless connect maker
